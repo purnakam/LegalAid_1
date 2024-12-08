@@ -1,0 +1,228 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('../img/HomeImage.jpg'); /* Adjust path to your image */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Navigation Bar */
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    padding: 10px 0;
+    width: 100%;
+}
+
+.nav-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-left button {
+    margin: 0 10px;
+    padding: 8px 15px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: whitesmoke;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-left button:hover {
+    background-color: transparent;
+    color: white;
+}
+
+p {
+    border: 1mm;
+    color: whitesmoke;
+    padding-bottom: 10px;
+}
+
+a {
+    font-size: 18px; /* Font size */
+    color: #89CFF0; /* Text color */
+    text-decoration: none; /* Remove underline */
+    margin: 10px 0; /* Margin around the link */
+    display: inline-block; /* Make it block-level for margin to work */
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
+
+/* Fieldset Styling */
+fieldset {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    width: 350px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Heading */
+fieldset h1 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+/* Form Elements */
+form p {
+    margin-bottom: 15px;
+    color: whitesmoke;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #007bff;
+}
+
+form input[type="text"],
+form input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="password"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Buttons */
+form input[type="submit"],
+form input[type="reset"] {
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover,
+form input[type="reset"]:hover {
+    background-color: #0056b3;
+}
+
+/* Google Sign-In Button */
+/* Google Sign-In Button */
+.google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px; /* Space between icon and text */
+    padding: 10px 15px;
+    border: 1px solid #4285F4; /* Google's blue color */
+    border-radius: 5px;
+    background-color: transparent; /* Match with style="background-color=transparent" */
+    color: #4285F4; /* Text color matching Google's branding */
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.google-btn:hover {
+    background-color: black; /* Highlighted blue on hover */
+    color: whitesmoke;
+    box-shadow: 0 4px 6px #7CB9E8; /* Add subtle shadow */
+}
+
+.google-btn:active {
+    box-shadow: none;
+    transform: scale(0.98); /* Slight click animation */
+}
+
+.google-icon {
+    height: 20px;
+    width: auto;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+
+/* Responsive Design */
+
+/* For tablets and smaller laptops */
+@media (max-width: 1024px) {
+    fieldset {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .nav-left button {
+        margin: 5px;
+        padding: 8px 10px;
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+    .container {
+        height: auto;
+        margin-top: 20px;
+    }
+
+    fieldset {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .nav-left {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-left button {
+        width: 90%;
+        margin-bottom: 10px;
+    }
+
+    form input[type="submit"],
+    form input[type="reset"] {
+        width: 48%;
+        margin: 5px 1%;
+    }
+
+    .g_id_signin {
+        width: 100%;
+    }
+}

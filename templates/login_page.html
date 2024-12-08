@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="nav">
+        <div class="nav-left">
+            <button onclick="window.location.href='{{ url_for('home') }}'">Home</button>
+            <button onclick="window.location.href='{{ url_for('help_portal') }}'">Help</button>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+        <fieldset>
+            <img src="{{ url_for('static', filename='img/LegalAid-removebg-preview1.png') }}" style="height: 60px; display: block; margin: 0 auto 15px;">
+            <h1>Welcome to LegalAid!</h1>
+            <p>your trusted source for legal guidance and information about the Indian Constitution. Our platform provides quick access to legal resources, expert advice, and consultations to empower you with knowledge. Get the assistance you need at your fingertips, anytime, anywhere.</p>
+
+            <a> Login with : </a>
+
+            <div class="g_id_signin">
+                <button id="google-signin" class="google-btn">
+                    <img src="{{ url_for('static', filename='img/google.png')}}" alt="Google Icon" class="google-icon" style="height: 20px; margin-right: 5px;"> Login with google
+                </button>
+            </div>
+        </fieldset>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
+        import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-analytics.js";
+        
+        const firebaseConfig = {
+            apiKey: "AIzaSyA0jZcDLS9b31fVf5Wb3yk4XNBaC9lVYkw",
+            authDomain: "eduai-17e96.firebaseapp.com",
+            projectId: "eduai-17e96",
+            storageBucket: "eduai-17e96.appspot.com",
+            messagingSenderId: "46846141128",
+            appId: "1:46846141128:web:9671893770e1d546a33bfd",
+            measurementId: "G-993XBM7FB2",
+        };
+        
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const auth = getAuth(app);
+        
+        auth.onAuthStateChanged(function(user) {
+            const profileSection = document.getElementById('profileSection');
+            if (profileSection) {
+                profileSection.innerHTML = user ? 
+                    `<div>Welcome, ${user.displayName}</div>
+                     <div>Email: ${user.email}</div>
+                     <button onclick="signOut()">Sign Out</button>` : 
+                    `<button onclick="signIn()">Sign In</button>`;
+            }
+        });
+
+        document.getElementById('google-signin').addEventListener('click', async () => {
+            const provider = new GoogleAuthProvider();
+            try {
+                const result = await signInWithPopup(auth, provider);
+                console.log("User signed in:", result.user);
+                window.location.href = "/";
+            } catch (error) {
+                console.error("Sign-in failed:", error);
+                alert("Sign-in failed. Please try again.");
+            }
+        });
+    </script>
+</body>
+</html>

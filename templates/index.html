@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="LegalAid offers essential legal services, study resources, and AI chatbot assistance.">
+    <title>LegalAid | Home Page</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chapter.css') }}">
+    <script src="{{ url_for('static', filename='js/LegalAid.js') }}" defer></script>
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='img/LegalAid-removebg-preview1.png') }}" alt="LegalAid Logo" class="header-logo">
+    </header>
+    <nav class="nav">
+        <div class="nav-left">
+            <button onclick="window.location.href='{{ url_for('about_us') }}'">About Us</button>
+            <button onclick="window.location.href='{{ url_for('help_portal') }}'">Help</button>
+            <button>History</button>
+            <button onclick="window.location.href='{{ url_for('payment_form') }}'">Payment</button>
+            <button onclick="window.location.href='{{ url_for('login_page') }}'">Login</button>
+        </div>
+        <div class="chatbot-container">
+            <input type="text" id="issue" placeholder="Enter Issue" class="search-bar">
+            <button type="submit" class="search-button" onclick="startChat()">Chatbot</button>
+        </div>
+    </nav>
+    <main>
+        <section>
+            <p class="intro-text">Your most trusted legal service site</p>
+            <h2>Providing essential legal services at rates that do you justice.</h2>
+            <h3>Our Services</h3>
+        </section>
+        <section class="services-container">
+            <section class="service">
+                <a href="{{ url_for('study_section') }}">
+                    <h2>Study Section</h2>
+                    <p>Access study materials and resources to enhance your legal knowledge.</p>
+                </a>
+            </section>
+            <section class="service">
+                <h2>Lawyer Consultation</h2>
+                <p class="work-in-progress">*Working on it*</p>
+                <p>Get legal advice and consultation from experienced lawyers.</p>
+            </section>
+            <section class="service">
+                <a href="{{ url_for('chatbot') }}">
+                    <h2>Chatbot</h2>
+                    <p class="work-in-progress">*Working on it*</p>
+                    <p>Chat with our AI-powered legal assistant for quick answers to your legal queries.</p>
+                </a>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <a href="#">FAQ</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Refund Policy</a>
+        <a href="#">&copy; 2023 | LegalAid</a>
+    </footer>
+</body>
+</html>

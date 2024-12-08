@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Section | LegalAid</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chapter.css') }}">
+
+    <!-- for google translate -->
+
+    <!-- Include the Google Translate API script -->
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script src="{{ url_for('static', filename='js/LegalAid.js') }}" defer></script>
+
+</head>
+<body>
+    <header>
+        <img src="{{ url_for('static', filename='img/LegalAid-removebg-preview1.png') }}" alt="LegalAid Logo" class="header-logo">
+    </header>
+    
+    <div id="google_translate_element"></div>
+    <nav class="nav">
+        <div class="nav-left">
+            <button onclick="window.location.href='{{ url_for('about_us') }}'">About Us</button>
+            <button onclick="window.location.href='{{ url_for('help_portal') }}'">Help</button>
+            <button>History</button>
+            <button onclick="window.location.href='{{ url_for('payment_form') }}'">Payment</button>
+            <button onclick="window.location.href='{{ url_for('login_page') }}'">Login</button>
+        </div>
+        <div class="search-bar-container">
+            <input type="text" id="search-bar" placeholder="Search Chapter" class="search-bar">
+            <button type="submit" class="search-button">Search</button>
+        </div>
+    </nav>
+
+    <main>
+        <section>
+            <fieldset>
+                <h2>Study Section</h2>
+                <p>Access study materials and resources to enhance your legal knowledge.</p>
+                <div id='content'>
+                    <h3>THE BHARATIYA NYAYA (SECOND) SANHITA, 2023</h3>
+                    <h4>*For complete PDF <a href="https://drive.google.com/file/d/1FZVZHtZ-oyRkeHMSKBFdEkbCX18XecqT/view?usp=drive_link" target="blank" > click here</a>*</h4>
+                    <table class="menu">
+                        <tr>
+                            <td>01 -</td>
+                            <td>
+                                <a href="{{ url_for('chapter1') }}">PRELIMINARY</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>02 -</td>
+                            <td>
+                                <a href="{{ url_for('chapter2') }}">OF PUNISHMENTS</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>03 -</td>
+                            <td>
+                                <a href="{{ url_for('chapter3') }}">GENERAL EXCEPTIONS</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>04 -</td>
+                            <td>
+                                <a href="{{ url_for('chapter4') }}">OF ABETMENT, CRIMINAL CONSPIRACY AND ATTEMPT</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>05 -</td>
+                            <td>
+                                <a href="{{ url_for('chapter5') }}">OF OFFENCES AGAINST WOMAN AND CHILD</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>06 -</td>
+                            <td>
+                                <a href="{{ url_for('chapter6') }}">OF OFFENCES AFFECTING THE HUMAN BODY</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>07 -</td>
+                            <td>
+                                <a href="{{ url_for('chapter7') }}">OF OFFENCES AGAINST THE STATE</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>08 -</td>
+                            <td>
+                                <a href="{{ url_for('chapter8') }}">OF OFFENCES RELATING TO THE ARMY, NAVY AND AIR FORCE</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>09 -</td>
+                            <td>
+                                <a href="{{ url_for('chapter9') }}">OF OFFENCES RELATING TO ELECTIONS</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>10 -</td>
+                            <td>
+                                <a href="{{ url_for('chapter10') }}">OF OFFENCES RELATING TO COIN, CURRENCY-NOTES, BANK-NOTES, AND <br>
+                                    GOVERNMENT STAMPS</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>11 -</td>
+                            <td>
+                                <a href="{{ url_for('chapter11') }}">OF OFFENCES AGAINST THE PUBLIC TRANQUILLITY</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>12 -</td>
+                            <td>
+                                <a href="{{ url_for('chapter12') }}">OF OFFENCES BY OR RELATING TO PUBLIC SERVANTS
+                                    CLAUSES</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>13 -</td>
+                            <td>
+                                <a href="{{ url_for('chapter13') }}">OF CONTEMPTS OF THE LAWFUL AUTHORITY OF PUBLIC SERVANTS</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>14 -</td>
+                            <td>
+                                <a href="{{ url_for('chapter14') }}">OF FALSE EVIDENCE AND OFFENCES AGAINST PUBLIC JUSTICE
+                                    CLAUSES</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>15 -</td>
+                            <td>
+                                <a href="{{ url_for('chapter15') }}">OF OFFENCES AFFECTING THE PUBLIC HEALTH, SAFETY, CONVENIENCE,
+                                    DECENCY AND MORALS</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>16 -</td>
+                            <td>
+                                <a href="{{ url_for('chapter16') }}">OF OFFENCES RELATING TO RELIGION</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>17 -</td>
+                            <td>
+                                <a href="{{ url_for('chapter17') }}">OF OFFENCES AGAINST PROPERTY
+                                    Of theft,Of extortion,Of robbery and dacoity,Of criminal <br> misappropriation of propertyOf criminal breach of trust,Of receiving stolen property,Of <br>cheating,Of mischief,Of criminal trespass</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>18 -</td>
+                            <td>
+                                <a href="{{ url_for('chapter18') }}">OF OFFENCES RELATING TO DOCUMENTS AND TO PROPERTY MARKS</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>19 -</td>
+                            <td>
+                                <a href="{{ url_for('chapter19') }}">OF CRIMINAL INTIMIDATION, INSULT, ANNOYANCE, DEFAMATION, ETC.</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>20 -</td>
+                            <td>
+                                <a href="{{ url_for('chapter20') }}">REPEAL AND SAVINGS</a>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                </div>
+            </fieldset>
+        </section>
+    </main>
+    <footer>
+        <a href="#">FAQ</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Refund Policy</a>
+        <a href="#">&copy; 2023 | LegalAid</a>
+    </footer>
+
+    
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Interface</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chatbot1.css') }}">
+</head>
+<body>
+    <div class="left-section">
+        <div class="shortcut-buttons">
+            <button>Login</button>
+            <button>Lawyer Consultant</button>
+            <button>Study Section</button>
+        </div>
+        <div class="chat-history" id="chat-history">
+            <div class="message bot-message">Hello! How can I assist you today?</div>
+        </div>
+    </div>
+    <div class="right-section">
+        <div class="header">
+            <img src="{{ url_for('static', filename='img/LegalAid-removebg-preview1.png') }}" alt="LegalAid Logo" class="header-logo">
+        </div>
+        <div class="chat-history" id="chat-history-right">
+            <div class="message bot-message">Hello! How can I assist you today?</div>
+        </div>
+        <div class="textarea-container">
+            <textarea class="message-input" placeholder="Type your message..."></textarea>
+            <div class="message-icons">
+                <label class="attach-icon" for="file-upload">📎<input type="file" id="file-upload" accept=".jpg, .jpeg, .png, .pdf" style="display: none;"></label>
+                <button class="microphone-icon">🎤</button>
+                <button class="send-button">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('send-button').addEventListener('click', function() {
+            const promoInput = document.getElementById('promo-input');
+            const promoMessage = promoInput.value;
+            const fileInput = document.getElementById('file-upload');
+
+            // Check if there's a file selected
+            if (fileInput.files.length > 0) {
+                const fileName = fileInput.files[0].name;
+                displayMessage(`File uploaded: ${fileName}`, 'user');
+                fileInput.value = ''; // Clear the file input
+            } else if (promoMessage.trim() !== '') {
+                displayMessage(promoMessage, 'user');
+                promoInput.value = ''; // Clear the input
+            }
+
+            // Simulate bot response
+            setTimeout(() => {
+                const botResponse = fileInput.files.length > 0 ? "File received." : "Message received: " + promoMessage;
+                displayMessage(botResponse, 'bot');
+            }, 1000);
+        });
+
+        function displayMessage(message, sender) {
+            const chatHistory = sender === 'user' ? document.getElementById('chat-history-right') : document.getElementById('chat-history');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}-message`;
+            messageDiv.textContent = message;
+            chatHistory.appendChild(messageDiv);
+            chatHistory.scrollTop = chatHistory.scrollHeight; // Scroll to the bottom
+        }
+    </script>
+</body>
+</html>

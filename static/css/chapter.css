@@ -1,0 +1,335 @@
+* {
+    box-sizing: border-box;
+    /* text-align: left; */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-image: url("../img/HomeImage1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Main services container */
+.services-container {
+    display: flex; /* Flexbox for horizontal alignment */
+    justify-content: center; /* Centers the boxes horizontally */
+    align-items: flex-start; /* Aligns items to the top */
+    flex-wrap: wrap; /* Wraps boxes to the next row if needed */
+    gap: 20px; /* Space between the boxes */
+    padding: 20px;
+}
+
+.service {
+    background-color: #000; /* Black background for each box */
+    color: #fff; /* White text for contrast */
+    border: 2px solid #007bff;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2); /* Light shadow */
+    width: 300px; /* Fixed width */
+    height: 200px; /* Fixed height */
+    display: flex; /* Flexbox for content alignment */
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect on box */
+.service:hover {
+    transform: translateY(-10px); /* Move box slightly upward */
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.4); /* Intensify shadow */
+    border-color: #007bff; /* Highlight border on hover */
+}
+
+/* Heading in each service */
+.service h2 {
+    color: #007bff; /* Primary theme color for headings */
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* Text in each service */
+.service p {
+    color: #ddd; /* Light text for readability */
+    font-size: 14px;
+}
+
+/* Responsive Design */
+
+/* Medium screens (Tablets and small laptops) */
+@media (max-width: 1024px) {
+    .service {
+        width: 45%; /* Two boxes per row */
+    }
+}
+
+/* Small screens (Mobile devices) */
+@media (max-width: 768px) {
+    .services-container {
+        flex-direction: column; /* Stack boxes vertically */
+    }
+
+    .service {
+        width: 90%; /* Make each box full width on small screens */
+    }
+}
+
+header h1 {
+    color: wheat;
+    text-align: center;
+    font-size: 40px;
+    padding: 5px;
+}
+
+.header-logo {
+    width: 150px; /* Adjust the size of the logo */
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Center the logo */
+}
+
+
+nav {
+    overflow: hidden;
+    /* background-color: rgba(0, 0, 0, 0.5); /* Adding a semi-transparent black background */
+}
+
+nav a {
+    text-decoration: none;
+    padding: 20px;
+    text-align: center;
+    float: left;
+    color: white;
+}
+
+nav a:hover {
+    color: tomato;
+    text-transform: uppercase;
+}
+
+main {
+    text-align: center;
+    flex: 1; /* Let the main content take up remaining space */
+}
+
+fieldset {
+    border-color: antiquewhite;
+    border-style: dashed;
+    margin: 20px 0;
+    padding: 20px;
+    text-align: left;
+    width: max-content; /* Adjusted width */
+}
+
+h2,h4 {
+    padding: 10px;
+    color: aqua;
+}
+
+a{
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+p,td {
+    border: 1mm;
+    color: whitesmoke;
+}
+
+h3 {
+    font-size: 26px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    padding: 20px;
+    color: rgb(26, 231, 153);
+}
+
+img {
+    padding: 10px;
+}
+
+h5 {
+    font-size: 20px;
+    color: #1b9caa;
+}
+
+footer {
+    overflow: hidden;
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+footer a {
+    text-decoration: dotted;
+    padding: 20px;
+    text-align: center;
+    float: left;
+    color: white;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+
+.nav-left button {
+    margin-right: 15px;
+    padding: 8px 15px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    background-color:  #007bff;
+    color: whitesmoke;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav-left button:hover {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.centered-text {
+    font-size: 22px;
+    text-align: center;
+    margin-top: 2%;
+    color: #FFF5EE;
+}
+
+.chatbot-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar-container {
+    display: inline-flex; /* Display search bar and button in a row */
+    align-items: center; /* Align items vertically */
+}
+
+.search-bar {
+    margin-right: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #007bff; /* Text color set to purple */
+}
+
+.search-button {
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+.search-results {
+    position: absolute;
+    margin-top: 10px;
+    max-height: 200px; /* Limit height */
+    width: 100%; /* Same width as the search bar */
+    background-color: black;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+    z-index: 999;
+    display: none; /* Hide by default */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.search-results a {
+    display: block;
+    padding: 5px;
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+.search-results a:hover {
+    background-color: black;
+}
+
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+    background-image: url('../img/Screenshot.JPG');
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 50%;
+    max-height: 50vh; /* Set maximum height */
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    word-wrap: break-word;
+    z-index: 9999;
+}
+
+.popup-content {
+    text-align: left;
+    color: blueviolet;
+}
+
+.popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: tomato;
+}
+
+/* Styles for the Google Translate widget */
+
+/* Styling for the container div */
+#google_translate_element {
+    margin-right: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #007bff;
+}
+
+
+/* Styling for the translate button */
+.goog-te-menu-value span {
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+/* Styling for the dropdown menu */
+.goog-te-menu-value span:hover {
+    background-color: #0056b3; /* Darken the background color on hover */
+}
+
+/* Styling for the language dropdown */
+.goog-te-combo {
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #007bff;
+}
+
+

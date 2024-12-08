@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Portal | LegalAid</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chapter.css') }}"> <!-- Flask Dynamic URL for CSS -->
+</head>
+<body>
+    <header>
+        <h1>Help Portal</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="nav">
+        <div class="nav-left">
+            <button onclick="window.location.href='{{ url_for('home') }}'">Home</button>
+            <button onclick="window.location.href='{{ url_for('about_us') }}'">About Us</button>
+            <button onclick="window.location.href='{{ url_for('login_page') }}'">Login</button>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Welcome Section -->
+        <section>
+            <h2>Welcome to Our Help Portal</h2>
+            <p>Find answers to your questions and get the support you need.</p>
+        </section>
+        
+        <!-- FAQ Section -->
+        <section>
+            <h2>Frequently Asked Questions (FAQ)</h2>
+            <ul>
+                <li><a href="#">How do I reset my password?</a></li>
+                <li><a href="#">What payment methods do you accept?</a></li>
+                <li><a href="#">How can I contact customer support?</a></li>
+            </ul>
+        </section>
+        
+        <!-- Contact Section -->
+        <section>
+            <h2>Contact Us</h2>
+            <p>If you need further assistance, feel free to contact us:</p>
+            <ul>
+                <li>Email: <a href="mailto:support@example.com">support@example.com</a></li>
+                <li>Phone: <a href="tel:18001234567">1-800-123-4567</a></li>
+            </ul>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <a href="#">FAQ</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Refund Policy</a>
+        <a href="#">&copy; 2023 | LegalAid</a>
+    </footer>
+</body>
+</html>

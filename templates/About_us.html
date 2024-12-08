@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | LegalMate</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/chapter.css') }}">
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 80%; /* Adjust the width as needed */
+            max-width: 800px; /* Maximum width to maintain responsiveness */
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .compact-table th, .compact-table td {
+            padding: 6px;
+        }
+        .table-container {
+            margin: 0 auto; /* Center the table horizontally */
+        }
+    </style>
+    
+</head>
+<body>
+    <header>
+        <h1>About Us</h1>
+    </header>
+    <nav class="nav">
+        <div class="nav-left">
+            <button onclick="window.location.href='{{ url_for('home') }}'">Home</button>
+            <button onclick="window.location.href='{{ url_for('help_portal') }}'">Help</button>
+            <button onclick="window.location.href='{{ url_for('login_page') }}'">Login</button>
+        </div>
+        <div class="chatbot-container">
+            <input type="text" id="issue" placeholder="Enter Issue" class="search-bar">
+            <button type="submit" class="search-button" onclick="startChat()">Chatbot</button>
+        </div>
+    </nav>
+    <main>
+        <section>
+            <h2>Our Mission</h2>
+            <p>
+                In the world of legal advocacy, we embark on an epic quest to unravel the law's complexities and bestow understanding upon all.
+                With cutting-edge AI, our chatbot becomes a trusted ally, simplifying legal intricacies into accessible knowledge.
+                Guided by innovation and empathy, we pave a path where legal empowerment is a right, not a privilege.
+                Each interaction is a cinematic journey, empowering seekers to navigate the legal landscape with clarity.
+                In our narrative, the law is not just rules—it's a beacon of hope, guiding all towards justice and equality.
+            </p>
+        </section>
+        <section class="table-container">
+            <h2>Our Team Members:</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>S No</th>
+                        <th>Name</th>
+                        <th>Core Area</th>
+                        <th>Additional Area</th>
+                        <th>Email ID</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1.</td>
+                        <td>Purnakam Shrivastava</td>
+                        <td>Python Developer</td>
+                        <td>Front-end</td>
+                        <td>purnakamshrivastava58@yahoo.com</td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td>Divyanshu Kumar Jha</td>
+                        <td>Mechanics Learning</td>
+                        <td>Natural Language Processing</td>
+                        <td>divyanshu.bhilai490024@gmail.com</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section class="values-section">
+            <h2>Our Values</h2>
+            <div>
+                <h3>Empowerment</h3>
+                <p>We believe everyone deserves clear and accessible legal information to make informed decisions.</p>
+            </div>
+            <div>
+                <h3>Innovation</h3>
+                <p>We embrace innovation as a tool for simplifying legal complexities.</p>
+            </div>
+            <div>
+                <h3>Integrity</h3>
+                <p>Honesty, transparency, and ethical standards are at the core of everything we do.</p>
+            </div>
+            <div>
+                <h3>Compassion</h3>
+                <p>We understand that legal issues are often tied to personal, sensitive, and challenging moments.</p>
+            </div>
+            <div>
+                <h3>Equality</h3>
+                <p>Justice is for everyone. We work toward creating a legal landscape where assistance is accessible to all.</p>
+            </div>
+            <div>
+                <h3>Excellence</h3>
+                <p>Our team is dedicated to maintaining high standards in every interaction.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <a href="#">FAQ</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Refund Policy</a>
+        <a href="#">&copy; 2023 | LegalAid</a>
+    </footer>
+</body>
+</html>
